@@ -35,8 +35,7 @@ import 'food_event.dart';
 class FoodBloc extends Bloc<FoodEvent, FoodState> {
   FoodRepository repository;
 
-  FoodState get initialState => FoodInitialState();
-  FoodBloc({FoodState? initialState,required this.repository,Key? key}) : super(initialState!);
+  FoodBloc({required this.repository,Key? key}) : super(FoodInitialState());
 
   @override
   Stream<FoodState> mapEventToState(FoodEvent event) async* {

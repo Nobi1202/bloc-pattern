@@ -43,6 +43,7 @@ class FoodRepositoryImpl extends FoodRepository {
   Future<List<Recipe>> getFoods() async {
     var response =
     await http.get(Uri.parse('https://forkify-api.herokuapp.com/api/search?q=pizza#'));
+    print(response.body);
     if (response.statusCode == 200) {
       var data = json.decode(response.body);
 

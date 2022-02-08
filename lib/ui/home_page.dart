@@ -60,12 +60,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  FoodBloc? foodBloc;
-
   @override
   void initState() {
-    foodBloc = BlocProvider.of<FoodBloc>(context);
-    foodBloc!.add(FetchFoodEvent());
+    BlocProvider.of<FoodBloc>(context).add(FetchFoodEvent());
     super.initState();
   }
 
